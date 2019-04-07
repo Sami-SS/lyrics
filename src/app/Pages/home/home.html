@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mobile Lyrics and Chords</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-buttons>
+  <button ion-button navPush="Addsong">Add song</button>
+  <button ion-button navPush="Register">Add Band</button>
+</ion-buttons>
+
+<ion-list>
+  <ion-item>
+      <ion-label>Show songs From Band:</ion-label>
+      <ion-select (ionChange)="onContextChange($event)" [(ngModel)]="band" multiple="false"
+      cancelText="cancel" okText="Show songs from selected">
+      <ion-option *ngFor="let band of bandsList$ | async"
+      
+      detail-push>{{band.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    songs:
+  </ion-list-header>
+  
+  <ion-item
+    *ngFor="let song of songsList$ | async"
+    detail-push navPush="viewsong"[navParams]="{song:song}">
+    {{song.title}}
+  </ion-item>
+</ion-list>
+
+<ion-buttons>
+  
+  <button ion-button navPush="Login">
+    Login
+  </button>
+  
+  <button ion-button (click)="showAllSongs()">
+      Show All songs
+  </button>  
+  
+  <button ion-button navPush="Invite">
+        Invite
+  </button>
+
+</ion-buttons>
+
+</ion-content>

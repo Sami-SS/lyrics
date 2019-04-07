@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{song?.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-buttons>
+    <button ion-button detail-push navPush="editsong" [navParams]
+        ="{song: song}">Edit song
+    </button>
+</ion-buttons>
+<ion-item class="chords">
+  <ion-textarea readonly [(ngModel)]="song.chords">
+  </ion-textarea>
+</ion-item>
+
+<ion-item class="lyrics">
+    <ion-textarea readonly [(ngModel)]="song.lyrics">
+    </ion-textarea>
+ </ion-item>
+
+</ion-content>

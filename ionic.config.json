@@ -1,6 +1,8 @@
 {
   "name": "songlyrics",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "0a9c6dc4"
 }

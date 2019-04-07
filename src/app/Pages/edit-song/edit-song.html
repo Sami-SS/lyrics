@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Editing: {{song?.band}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button block clear (click)="saveSong(song)">Save</button>
+    <button ion-button block clear (click)="deleteSong(song)">Delete</button>
+
+    <ion-item>
+      <ion-label>Band: </ion-label>
+        <ion-input [(ngModel)]="song.band">
+        </ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label>Song Title: </ion-label>
+          <ion-input [(ngModel)]="song.title">
+          </ion-input>
+       </ion-item>
+
+       <ion-item class="chords">
+          <ion-label>Chords: </ion-label>
+          <ion-textarea [(ngModel)]="song.chords">
+          </ion-textarea>
+        </ion-item>
+        
+        <ion-item class="lyrics">
+            <ion-label>Lyrics: </ion-label>
+            <ion-textarea [(ngModel)]="song.lyrics">
+            </ion-textarea>
+         </ion-item>
+</ion-content>
